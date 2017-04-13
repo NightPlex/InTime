@@ -532,11 +532,11 @@ public final class RegionClipping {
 	/**
 	 * Tells you if this direction is walkable.
 	 * 
-	 * @param x
+	 *
 	 *            the x coordinate.
-	 * @param y
+	 * @param pos
 	 *            the y coordinate.
-	 * @param z
+	 *
 	 *            the z coordinate.
 	 * @param direction
 	 *            the direction.

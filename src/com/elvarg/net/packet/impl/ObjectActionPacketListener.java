@@ -12,6 +12,7 @@ import com.elvarg.net.packet.PacketListener;
 import com.elvarg.world.collision.region.RegionClipping;
 import com.elvarg.world.content.Obelisks;
 import com.elvarg.world.entity.combat.CombatSpecial;
+import com.elvarg.world.entity.impl.object.GameObject;
 import com.elvarg.world.entity.impl.player.Player;
 import com.elvarg.world.model.ForceMovement;
 import com.elvarg.world.model.Graphic;
@@ -21,6 +22,8 @@ import com.elvarg.world.model.Skill;
 import com.elvarg.world.model.Locations.Location;
 import com.elvarg.world.model.dialogue.DialogueManager;
 import com.elvarg.world.model.dialogue.DialogueOptions;
+import com.elvarg.world.model.skills.woodcutting.WoodCuttingLogic;
+import com.elvarg.world.model.skills.woodcutting.WoodcuttingTreeData;
 
 /**
  * This packet listener is called when a player clicked
@@ -57,6 +60,10 @@ public class ObjectActionPacketListener implements PacketListener {
 
 		//Calculate object size...
 		final int size = (def.getSizeX() + def.getSizeY()) - 1;
+
+		if(WoodcuttingTreeData.forId(id) != null) {
+			WoodCuttingLogic.attemptWoodcutting(player, id, position);
+		}
 
 		//Face object..
 		player.setPositionToFace(position);

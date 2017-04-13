@@ -9,7 +9,8 @@ import com.elvarg.world.entity.impl.player.Player;
 import com.elvarg.world.model.*;
 
 /**
- * Created by Steven on 4/13/2017.
+ * Created by NightPlex
+ * @author Steven
  */
 
 public class WoodCuttingLogic extends Task {
@@ -31,10 +32,12 @@ public class WoodCuttingLogic extends Task {
         GameObject object = new GameObject(objectId, position, 10, 0);
         WoodcuttingTreeData tree = WoodcuttingTreeData.forId(object.getId());
         if (tree == null) {
+            System.out.println("no tree found");
             return;
         }
 
         if (!meetsRequirements(player, tree, object)) {
+            System.out.println("No reqs");
             return;
         }
 
@@ -141,7 +144,7 @@ public class WoodCuttingLogic extends Task {
             return false;
         }
         //Check if object even exists
-        if(RegionClipping.objectExists(object.getId(), object.getPosition())) {
+        if(!RegionClipping.objectExists(object.getId(), object.getPosition())) {
             return false;
         }
         //Full?
