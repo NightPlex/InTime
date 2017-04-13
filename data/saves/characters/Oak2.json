@@ -1,0 +1,412 @@
+{
+  "username": "Oak2",
+  "password": "hhh",
+  "staff-rights": "DEVELOPER",
+  "position": {
+    "x": 3116,
+    "y": 3507,
+    "z": 0
+  },
+  "spell-book": "LUNAR",
+  "fight-type": "BATTLEAXE_HACK",
+  "auto-retaliate": false,
+  "xp-locked": false,
+  "clanchat": "Oak",
+  "target-teleport": false,
+  "preserve": false,
+  "rigour": false,
+  "augury": false,
+  "has-veng": true,
+  "last-veng": -2843,
+  "running": true,
+  "openPresetsOnDeath": true,
+  "run-energy": 100,
+  "spec-percentage": 100,
+  "recoil-damage": 0,
+  "poison-damage": 0,
+  "poison-immunity": -15,
+  "fire-immunity": -15,
+  "teleblock-timer": -15,
+  "prayerblock-timer": -15,
+  "target-search-timer": -4195,
+  "special-attack-restore-timer": -5021,
+  "skull-timer": -4458,
+  "skull-type": "RED_SKULL",
+  "total-kills": 0,
+  "target-kills": 0,
+  "normal-kills": 0,
+  "killstreak": 0,
+  "highest-killstreak": 0,
+  "recent-kills": [],
+  "deaths": 0,
+  "points": 0,
+  "amount-donated": 0,
+  "blowpipe-scales": 0,
+  "inventory": [
+    {
+      "id": 4151,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 13576,
+      "amount": 1,
+      "slot": 1
+    },
+    {
+      "id": 2436,
+      "amount": 1,
+      "slot": 2
+    },
+    {
+      "id": 2440,
+      "amount": 1,
+      "slot": 3
+    },
+    {
+      "id": 3144,
+      "amount": 1,
+      "slot": 4
+    },
+    {
+      "id": 8850,
+      "amount": 1,
+      "slot": 5
+    },
+    {
+      "id": 3024,
+      "amount": 1,
+      "slot": 6
+    },
+    {
+      "id": 6685,
+      "amount": 1,
+      "slot": 7
+    },
+    {
+      "id": 13307,
+      "amount": 155000,
+      "slot": 8
+    },
+    {
+      "id": 5698,
+      "amount": 1,
+      "slot": 9
+    },
+    {
+      "id": 3026,
+      "amount": 1,
+      "slot": 10
+    },
+    {
+      "id": 6685,
+      "amount": 1,
+      "slot": 11
+    },
+    {
+      "id": 3144,
+      "amount": 1,
+      "slot": 12
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 13
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 14
+    },
+    {
+      "id": 385,
+      "amount": 1,
+      "slot": 15
+    },
+    {
+      "id": 3144,
+      "amount": 1,
+      "slot": 16
+    },
+    {
+      "id": 385,
+      "amount": 1,
+      "slot": 17
+    },
+    {
+      "id": 385,
+      "amount": 1,
+      "slot": 18
+    },
+    {
+      "id": 385,
+      "amount": 1,
+      "slot": 19
+    },
+    {
+      "id": 3144,
+      "amount": 1,
+      "slot": 20
+    },
+    {
+      "id": 385,
+      "amount": 1,
+      "slot": 21
+    },
+    {
+      "id": 385,
+      "amount": 1,
+      "slot": 22
+    },
+    {
+      "id": 2550,
+      "amount": 1,
+      "slot": 23
+    },
+    {
+      "id": 560,
+      "amount": 998,
+      "slot": 24
+    },
+    {
+      "id": 557,
+      "amount": 990,
+      "slot": 25
+    },
+    {
+      "id": 9075,
+      "amount": 996,
+      "slot": 26
+    },
+    {
+      "id": 8013,
+      "amount": 15,
+      "slot": 27
+    }
+  ],
+  "equipment": [
+    {
+      "id": 3753,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 9751,
+      "amount": 1,
+      "slot": 1
+    },
+    {
+      "id": 1704,
+      "amount": 1,
+      "slot": 2
+    },
+    {
+      "id": 6739,
+      "amount": 1,
+      "slot": 3
+    },
+    {
+      "id": 1127,
+      "amount": 1,
+      "slot": 4
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": 1079,
+      "amount": 1,
+      "slot": 7
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": 7462,
+      "amount": 1,
+      "slot": 9
+    },
+    {
+      "id": 4131,
+      "amount": 1,
+      "slot": 10
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": 2550,
+      "amount": 1,
+      "slot": 12
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    }
+  ],
+  "appearance": [
+    0,
+    3,
+    18,
+    26,
+    34,
+    38,
+    42,
+    14,
+    2,
+    14,
+    5,
+    4,
+    0
+  ],
+  "skills": {
+    "level": [
+      70,
+      45,
+      99,
+      95,
+      99,
+      52,
+      94,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "maxLevel": [
+      70,
+      45,
+      99,
+      95,
+      99,
+      52,
+      94,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "experience": [
+      737627,
+      61512,
+      13034431,
+      8771558,
+      13034431,
+      123660,
+      7944614,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "quick-prayers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "friends": [],
+  "ignores": [],
+  "presets": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "bank-0": [
+    {
+      "id": 21003,
+      "amount": 1,
+      "slot": 0
+    }
+  ],
+  "bank-1": [],
+  "bank-2": [],
+  "bank-3": [],
+  "bank-4": [],
+  "bank-5": [],
+  "bank-6": [],
+  "bank-7": [],
+  "bank-8": [],
+  "bank-9": []
+}
