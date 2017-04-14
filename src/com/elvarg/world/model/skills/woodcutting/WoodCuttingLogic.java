@@ -45,6 +45,7 @@ public class WoodCuttingLogic extends Task {
 
         int d = 0;
 
+
         for (int s : AXES) {
             if (player.getEquipment().getItems()[3] != null && player.getEquipment().getItems()[3].getId() == s) {
                 axes[d] = WoodcuttingAxeData.forId(s);
