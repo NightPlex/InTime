@@ -65,7 +65,7 @@ public class GameConstants {
 	/**
 	 * Multiplies the experience gained.
 	 */
-	public static final double EXP_MULTIPLIER = 6;
+	public static final int EXP_MULTIPLIER = 300;
 	
 	/**
 	 * The tab interfaces in game.
@@ -74,7 +74,7 @@ public class GameConstants {
 	 */
 	public static final int TAB_INTERFACES[][] =
 		{
-				{0, 2423}, {1, 24000}, {2, 31000}, {3, 3213}, {4, 1644}, {5, 5608}, {6, -1}, //Row 1
+				{0, 2423}, {1, 3917}, {2, 31000}, {3, 3213}, {4, 1644}, {5, 5608}, {6, -1}, //Row 1
 
 				{7, 37128}, {8, 5065}, {9, 5715}, {10, 2449}, {11, 42500}, {12, 147}, {13, 32000} //ROw 2
 		};

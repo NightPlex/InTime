@@ -33,6 +33,11 @@ public enum WoodcuttingAxeData {
     private static Map<Integer, WoodcuttingAxeData> axes = new HashMap<>();
 
     public static WoodcuttingAxeData forId(int id) {
+
+
+        if(axes.isEmpty())
+            System.out.println("empty lol");
+
         return axes.get(Integer.valueOf(id));
     }
 

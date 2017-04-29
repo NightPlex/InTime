@@ -63,6 +63,7 @@ public final class ChannelEventHandler extends SimpleChannelInboundHandler<Objec
 
 		//Queue the player for logout
 		if(player.getSession().getState() == SessionState.LOGGED_IN || player.getSession().getState() == SessionState.REQUESTED_LOG_OUT) {
+
 			if(!World.getPlayerRemoveQueue().contains(player)) {
 				
 				//Close all open interfaces..

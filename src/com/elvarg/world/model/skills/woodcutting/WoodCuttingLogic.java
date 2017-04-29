@@ -1,5 +1,7 @@
 package com.elvarg.world.model.skills.woodcutting;
 
+import com.elvarg.GameConstants;
+import com.elvarg.Utility;
 import com.elvarg.engine.task.Task;
 import com.elvarg.engine.task.TaskManager;
 import com.elvarg.world.World;
@@ -49,6 +51,9 @@ public class WoodCuttingLogic extends Task {
         for (int s : AXES) {
             if (player.getEquipment().getItems()[3] != null && player.getEquipment().getItems()[3].getId() == s) {
                 axes[d] = WoodcuttingAxeData.forId(s);
+                //test
+                System.out.println(WoodcuttingAxeData.forId(1351));
+
                 d++;
                 break;
             }
@@ -94,7 +99,7 @@ public class WoodCuttingLogic extends Task {
             if (anyLevelAxe != 0) {
                 player.getPacketSender().sendMessage("You need a woodcutting level of " + anyLevelAxe + " to use this axe.");
             } else {
-                player.getPacketSender().sendMessage("Yo do not have an axe");
+                player.getPacketSender().sendMessage("You do not have an axe");
             }
             return;
         }
@@ -154,6 +159,7 @@ public class WoodCuttingLogic extends Task {
             player.getPacketSender().sendMessage("You don't have enough inventory space left");
             return false;
         }
+
         return true;
     }
 
@@ -207,7 +213,7 @@ public class WoodCuttingLogic extends Task {
      * @param axe
      */
     public WoodCuttingLogic(Player player, int treeId, WoodcuttingTreeData tree, GameObject object, WoodcuttingAxeData axe) {
-        super(1, false);
+        super(1, false, BreakType.ON_MOVE);
         this.player = player;
         this.object = object;
         this.tree = tree;
@@ -220,7 +226,7 @@ public class WoodCuttingLogic extends Task {
      */
     private void animate() {
 
-        player.getPacketSender().sendSound(472, 5, 0);
+       // player.getPacketSender().sendSound(472, 5, 0);
 
         //TODO: figure out what it does
         if (++animationCycle == 1) {
@@ -238,6 +244,7 @@ public class WoodCuttingLogic extends Task {
 
         if (pos == 3) {
             if ((successfulAttemptChance()) && (handleTreeChopping())) {
+
                 stop();
                 return;
             }
@@ -255,7 +262,7 @@ public class WoodCuttingLogic extends Task {
      */
     private void handleGivingLogs() {
         player.getInventory().add(new Item(tree.getReward(), 1));
-        player.getSkillManager().addExperience(Skill.WOODCUTTING, tree.getExperience());
+        player.getSkillManager().addExperience(Skill.WOODCUTTING, tree.getExperience() * GameConstants.EXP_MULTIPLIER);
 
     }
 
@@ -300,22 +307,23 @@ public class WoodCuttingLogic extends Task {
      * Handles chopping a tree down
      */
     private void successfulAttempt() {
-        player.getPacketSender().sendSound(1312, 5, 0);
+
+       // player.getPacketSender().sendSound(1312, 5, 0);
         player.getPacketSender().sendMessage("You successfully chop down the tree.");
         player.getInventory().add(new Item(tree.getReward(), 1));
-        player.getSkillManager().addExperience(Skill.WOODCUTTING, tree.getExperience());
+        player.getSkillManager().addExperience(Skill.WOODCUTTING, tree.getExperience() * GameConstants.EXP_MULTIPLIER);
         player.performAnimation(new Animation(65535));
 
         //TODO: achivement????????????
 
-        GameObject replacement = new GameObject(tree.getReplacement(), object.getPosition(), 10, 0);
+     /*   GameObject replacement = new GameObject(tree.getReplacement(), object.getPosition(), 10, 0);
 
 
         if (replacement != null) {
             RegionClipping.addObject(replacement);
             RegionClipping.removeObject(replacement);
             TaskManager.submit(new StumpTask(object, treeId, tree.getRespawnTimer()));
-        }
+        }*/
     }
 
     /**
@@ -327,11 +335,11 @@ public class WoodCuttingLogic extends Task {
         return isSuccess(player, Skill.WOODCUTTING, tree.getLevelRequired(), axe.getLevelRequired());
     }
 
-    public final boolean isSuccess(Player p, Skill skillId, int levelRequired, int toolLevelRequired) {
-        double level = (99 + toolLevelRequired)/2;
+    public final boolean isSuccess(Player p, Skill skill, int levelRequired, int toolLevelRequired) {
+        double level = (player.getSkillManager().getCurrentLevel(skill) + toolLevelRequired)/2;
         double req = levelRequired;
         double successChance = Math.ceil((level * 50.0D - req * 15.0D) / req / 3.0D * 4.0D);
-        int roll = 0;//Utility.randomNumber(99);
+        int roll = Utility.randomNumber(99);
 
         if (successChance >= roll) {
             return true;

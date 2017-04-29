@@ -1,5 +1,8 @@
 package com.elvarg.engine.task;
 
+import com.elvarg.world.entity.Entity;
+import com.elvarg.world.model.Animation;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -52,6 +55,22 @@ public final class TaskManager {
 			activeTasks.stream().filter(t -> t.getKey().equals(key)).forEach(t -> t.stop());
 		} catch(Exception e) {
 			e.printStackTrace();
+		}
+	}
+
+	public static void onMovement(Entity e) {
+		List<Task> active = activeTasks;
+
+
+		if (active != null) {
+			for (Iterator<Task> i = active.iterator(); i.hasNext();) {
+				Task t = i.next();
+				if (t.getBreakType() == Task.BreakType.ON_MOVE) {
+					t.stop();
+					e.performAnimation(new Animation(-1,0));
+					i.remove();
+				}
+			}
 		}
 	}
 

@@ -26,7 +26,12 @@ public abstract class Task {
      * executed.
      */
     private int countdown;
- 
+
+    /** *
+     *
+     */
+    private final BreakType breakType;
+
     /**
      * A flag which indicates if this task is still running.
      */
@@ -40,6 +45,20 @@ public abstract class Task {
      * The task's owner
      */
     private Object key;
+
+    /**
+     *
+     */
+    public enum BreakType {
+        /**
+         * Never stop this task
+         */
+        NEVER,
+        /**
+         * Stop this task on movement
+         */
+        ON_MOVE
+    }
  
     public final Object getKey() {
         return Objects.requireNonNull(key);
@@ -90,8 +109,25 @@ public abstract class Task {
         this.countdown = delay;
         this.immediate = immediate;
         this.bind(DEFAULT_KEY);
+        breakType = BreakType.NEVER;
     }
- 
+
+    /**
+     * Creates a new task with the specified delay and immediate flag.
+     * @param delay The number of cycles between consecutive executions of this
+     * task.
+     * @param immediate A flag which indicates if for the first execution there
+     * should be no delay.
+     * @throws IllegalArgumentException if the {@code delay} is not positive.
+     */
+    public Task(int delay, boolean immediate, BreakType breakType) {
+        this.delay = delay;
+        this.countdown = delay;
+        this.immediate = immediate;
+        this.bind(DEFAULT_KEY);
+        this.breakType = breakType;
+    }
+
     /**
      * Creates a new task with the specified delay and immediate flag.
      * @param delay The number of cycles between consecutive executions of this
@@ -105,6 +141,7 @@ public abstract class Task {
         this.countdown = delay;
         this.immediate = immediate;
         this.bind(key);
+        breakType = BreakType.NEVER;
     }
  
     /**
@@ -169,5 +206,9 @@ public abstract class Task {
      */
     public void stop() {
         running = false;
+    }
+
+    public BreakType getBreakType() {
+        return breakType;
     }
 }

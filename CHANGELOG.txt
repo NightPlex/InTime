@@ -1,0 +1,16 @@
+REWRITING SKILLS ************
+
+#Woodcutting#
+1.Added tree data, (WIth tree exp, id, and so on.)
+2.Added Tree age data, (which ages to use and reqs)
+3. Added woodcutting logic (action dont stop after movement yet) Added on movement stop
+4.Added onclick to object for woodcutting
+5.Added few utilities
+6.Orbs are working not trying to solve bugs
+&& Maybe needs a relook
+#Mining#
+1.Added ore and axe darta
+2.Works but too fast
+3.FIX IT
+#Dodian 3.0# NEW ERA
+OSRS items, new content same base :()

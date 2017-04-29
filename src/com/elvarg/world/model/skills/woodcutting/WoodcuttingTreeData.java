@@ -7,7 +7,7 @@ import com.elvarg.definitions.ObjectDefinition;
  */
 
 public enum WoodcuttingTreeData {
-    NORMAL_FREE(1, 1276, 1342, 22, 25),
+    NORMAL_FREE(1, 1511, 1342, 22, 25),
     DEAD_TREE(1, 1511, 1342, 22, 25),
     OAK_TREE(15, 1521, 1356, 30, 37),
     WILLOW_TREE(30, 1519, 7399, 38, 67),

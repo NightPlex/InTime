@@ -76,6 +76,12 @@ public class RuneMainBot extends NPCBotHandler implements CombatMethod {
 
 			//Eat whenever we need to.
 			if(npc.getHitpoints() > 0) {
+
+				if(opponent.getHitpoints() < 20) {
+					npc.forceChat("SPecial attack!!");
+					npc.setSpecialActivated(true);
+				}
+
 				if(npc.getHitpoints() < 40 + Misc.getRandom(15)) {
 					if(getEatCounter() < 28) {
 						super.eat(FoodType.SHARK, 1100);
@@ -99,7 +105,10 @@ public class RuneMainBot extends NPCBotHandler implements CombatMethod {
 
 			//Activate it randomly and if they're in distance..
 			if(inDistance && npc.getSpecialPercentage() > CombatSpecial.DRAGON_DAGGER.getDrainAmount()) {
-				if(Misc.getRandom(20) <= 3) {
+				/*if(Misc.getRandom(20) <= 3) {
+					npc.setSpecialActivated(true);
+				}*/
+				if(opponent.getHitpoints() < 25) {
 					npc.setSpecialActivated(true);
 				}
 			}

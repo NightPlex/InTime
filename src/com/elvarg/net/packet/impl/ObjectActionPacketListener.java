@@ -22,6 +22,8 @@ import com.elvarg.world.model.Skill;
 import com.elvarg.world.model.Locations.Location;
 import com.elvarg.world.model.dialogue.DialogueManager;
 import com.elvarg.world.model.dialogue.DialogueOptions;
+import com.elvarg.world.model.skills.mining.Mining;
+import com.elvarg.world.model.skills.mining.Ore;
 import com.elvarg.world.model.skills.woodcutting.WoodCuttingLogic;
 import com.elvarg.world.model.skills.woodcutting.WoodcuttingTreeData;
 
@@ -61,8 +63,14 @@ public class ObjectActionPacketListener implements PacketListener {
 		//Calculate object size...
 		final int size = (def.getSizeX() + def.getSizeY()) - 1;
 
+		//If clicked chop wood TODO: How?
 		if(WoodcuttingTreeData.forId(id) != null) {
 			WoodCuttingLogic.attemptWoodcutting(player, id, position);
+		}
+
+		System.out.println(Ore.get(id) + "the id is: " + id);
+		if(Ore.get(id) != null) {
+			Mining.clickRock(player, id, position);
 		}
 
 		//Face object..

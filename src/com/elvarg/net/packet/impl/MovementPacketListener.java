@@ -1,5 +1,6 @@
 package com.elvarg.net.packet.impl;
 
+import com.elvarg.engine.task.TaskManager;
 import com.elvarg.net.packet.Packet;
 import com.elvarg.net.packet.PacketConstants;
 import com.elvarg.net.packet.PacketListener;
@@ -25,6 +26,11 @@ public class MovementPacketListener implements PacketListener {
 		if(player == null || player.getHitpoints() <= 0) {
 			return;
 		}
+
+		//If move TODO: check me
+		TaskManager.onMovement(player);
+
+
 
 		/*	if (packet.getOpcode() == 248)
 			size -= 14;

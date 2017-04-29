@@ -497,6 +497,9 @@ public class CommandPacketListener implements PacketListener {
 				player.getInventory().add(rune, 1000);
 			}
 		}
+		if(parts[0].startsWith("interface")) {
+			player.getPacketSender().sendInterface(Integer.parseInt(parts[1]));
+		}
 		if(parts[0].equals("tele")) {
 			int x = Integer.parseInt(parts[1]);
 			int y = Integer.parseInt(parts[2]);

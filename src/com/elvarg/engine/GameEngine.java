@@ -3,6 +3,9 @@ package com.elvarg.engine;
 import com.elvarg.engine.task.TaskManager;
 import com.elvarg.world.World;
 import com.elvarg.world.content.clan.ClanChatManager;
+import com.elvarg.world.model.skills.mining.Ore;
+import com.elvarg.world.model.skills.mining.Pickaxe;
+import com.elvarg.world.model.skills.woodcutting.WoodcuttingAxeData;
 
 /**
  * The engine which processes the game.
@@ -20,6 +23,10 @@ public final class GameEngine implements Runnable {
 			
 			TaskManager.sequence();
 			World.sequence();
+			//TODO: Find better place
+			WoodcuttingAxeData.declare();
+			Ore.declare();
+			Pickaxe.declare();
 					
 		} catch (Throwable e) {
 			e.printStackTrace();
